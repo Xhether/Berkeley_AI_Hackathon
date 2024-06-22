@@ -11,6 +11,13 @@
 		2E5797392C27696A004B737F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5797382C27696A004B737F /* ContentView.swift */; };
 		2E57973B2C27696B004B737F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E57973A2C27696B004B737F /* Assets.xcassets */; };
 		2E57973E2C27696B004B737F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E57973D2C27696B004B737F /* Preview Assets.xcassets */; };
+		2E57974B2C2792CC004B737F /* TopLearningPlatforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57974A2C2792CC004B737F /* TopLearningPlatforms.swift */; };
+		2E57974D2C2792FA004B737F /* TopCommunities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57974C2C2792FA004B737F /* TopCommunities.swift */; };
+		2E57974F2C279318004B737F /* Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57974E2C279318004B737F /* Configurations.swift */; };
+		2E5797512C27939E004B737F /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5797502C27939E004B737F /* Home.swift */; };
+		2E5797572C279710004B737F /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5797562C279710004B737F /* Menu.swift */; };
+		2E57975A2C2797B1004B737F /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5797592C2797B1004B737F /* AuthViewModel.swift */; };
+		2E57975C2C27987F004B737F /* DefaultEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57975B2C27987F004B737F /* DefaultEnvironment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +26,13 @@
 		2E5797382C27696A004B737F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2E57973A2C27696B004B737F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E57973D2C27696B004B737F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2E57974A2C2792CC004B737F /* TopLearningPlatforms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopLearningPlatforms.swift; sourceTree = "<group>"; };
+		2E57974C2C2792FA004B737F /* TopCommunities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCommunities.swift; sourceTree = "<group>"; };
+		2E57974E2C279318004B737F /* Configurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurations.swift; sourceTree = "<group>"; };
+		2E5797502C27939E004B737F /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		2E5797562C279710004B737F /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		2E5797592C2797B1004B737F /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		2E57975B2C27987F004B737F /* DefaultEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultEnvironment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +66,12 @@
 			isa = PBXGroup;
 			children = (
 				2E5797362C27696A004B737F /* Berkeley_AI_HackathonApp.swift */,
-				2E5797382C27696A004B737F /* ContentView.swift */,
+				2E5797472C27926D004B737F /* Growth Space */,
+				2E5797582C279792004B737F /* Learning Mode */,
+				2E5797522C2795D8004B737F /* Model */,
+				2E5797462C279253004B737F /* Settings */,
+				2E5797532C279631004B737F /* Root */,
+				2E5797452C276A19004B737F /* Home */,
 				2E57973A2C27696B004B737F /* Assets.xcassets */,
 				2E57973C2C27696B004B737F /* Preview Content */,
 			);
@@ -65,6 +84,64 @@
 				2E57973D2C27696B004B737F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2E5797452C276A19004B737F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2E5797502C27939E004B737F /* Home.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2E5797462C279253004B737F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2E5797562C279710004B737F /* Menu.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		2E5797472C27926D004B737F /* Growth Space */ = {
+			isa = PBXGroup;
+			children = (
+				2E57974A2C2792CC004B737F /* TopLearningPlatforms.swift */,
+				2E57974C2C2792FA004B737F /* TopCommunities.swift */,
+				2E5797482C27928B004B737F /* Problem Session */,
+			);
+			path = "Growth Space";
+			sourceTree = "<group>";
+		};
+		2E5797482C27928B004B737F /* Problem Session */ = {
+			isa = PBXGroup;
+			children = (
+				2E57974E2C279318004B737F /* Configurations.swift */,
+			);
+			path = "Problem Session";
+			sourceTree = "<group>";
+		};
+		2E5797522C2795D8004B737F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2E5797592C2797B1004B737F /* AuthViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2E5797532C279631004B737F /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				2E5797382C27696A004B737F /* ContentView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		2E5797582C279792004B737F /* Learning Mode */ = {
+			isa = PBXGroup;
+			children = (
+				2E57975B2C27987F004B737F /* DefaultEnvironment.swift */,
+			);
+			path = "Learning Mode";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +214,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E57974B2C2792CC004B737F /* TopLearningPlatforms.swift in Sources */,
+				2E57974F2C279318004B737F /* Configurations.swift in Sources */,
+				2E5797572C279710004B737F /* Menu.swift in Sources */,
 				2E5797392C27696A004B737F /* ContentView.swift in Sources */,
+				2E57975A2C2797B1004B737F /* AuthViewModel.swift in Sources */,
 				2E5797372C27696A004B737F /* Berkeley_AI_HackathonApp.swift in Sources */,
+				2E5797512C27939E004B737F /* Home.swift in Sources */,
+				2E57974D2C2792FA004B737F /* TopCommunities.swift in Sources */,
+				2E57975C2C27987F004B737F /* DefaultEnvironment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
