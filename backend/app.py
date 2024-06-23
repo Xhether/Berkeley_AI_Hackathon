@@ -10,7 +10,13 @@ from random import choice
 from flask_cors import CORS
 from dotenv import load_dotenv
 import base64
-from hume_client import main as hume_main, received_messages
+from hume_client import (
+    hume_main,
+    received_messages,
+    send_message_to_hume,
+    close_hume_socket,
+)
+
 
 # Load environment variables from .env file
 load_dotenv()
@@ -39,6 +45,12 @@ def success_response(data, code=200):
 
 def failure_response(message, code=404):
     return json.dumps({"success": False, "error": message}), code
+
+
+# Global variables for Hume AI chat
+received_messages = []
+chat_session_active = False
+socket_instance = None  # Add a variable to store the WebSocket instance
 
 
 # Generate Client ID for Token Authentication
@@ -79,24 +91,52 @@ def hello_world():
 # -------Hume_AI--------#
 
 
-# Health Check endpoint
 @app.route("/health", methods=["GET"])
 def health():
     return success_response("Server is running", 200)
 
 
-# Chat endpoint to interact with Hume client
-@app.route("/api/chat", methods=["POST"])
-def send_chat():
+@app.route("/api/start_chat", methods=["POST"])
+def start_chat():
+    global chat_session_active, received_messages, socket_instance
+    if chat_session_active:
+        return failure_response("Chat session already active", 400)
+
     try:
-        # Clear the received_messages list before starting
         received_messages.clear()
-
+        chat_session_active = True
         asyncio.run(hume_main())
+        return success_response("Chat session started", 200)
+    except Exception as e:
+        return failure_response(str(e), 500)
 
+
+@app.route("/api/send_chat", methods=["POST"])
+def send_chat():
+    global chat_session_active
+    if not chat_session_active:
+        return failure_response("No active chat session", 400)
+
+    try:
+        user_message = request.json.get("message")
+        if not user_message:
+            return failure_response("No message provided", 400)
+
+        asyncio.run(send_message_to_hume(user_message))
         return success_response(received_messages, 200)
     except Exception as e:
         return failure_response(str(e), 500)
+
+
+@app.route("/api/stop_chat", methods=["POST"])
+def stop_chat():
+    global chat_session_active
+    if not chat_session_active:
+        return failure_response("No active chat session to stop", 400)
+
+    chat_session_active = False
+    asyncio.run(close_hume_socket())
+    return success_response("Chat session stopped", 200)
 
 
 @app.route("/api/fetch_educational_resources", methods=["POST"])
@@ -153,6 +193,11 @@ def create_user():
     )  # add object to sqlAlchemy session and commit to database. This is effectively one row in courses table
     db.session.commit()
     return success_response(new_user.serialize(), 201)
+
+
+@app.route("/api/chat_history", methods=["GET"])
+def get_chat_history():
+    return success_response(received_messages)
 
 
 """

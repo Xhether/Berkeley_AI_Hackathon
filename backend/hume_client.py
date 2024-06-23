@@ -4,11 +4,16 @@ from dotenv import load_dotenv
 from helper_functions import print_ascii_art
 from hume import HumeVoiceClient, MicrophoneInterface, VoiceSocket
 
-# Global variables to store messages and count them
+# Load environment variables
+load_dotenv()
+
+# Global Variables
 message_counter = 0
 received_messages = []
+socket_instance = None  # Add a variable to store the WebSocket instance
 
 
+# Event Handlers
 def on_open():
     print_ascii_art("Say hello to EVI, Hume AI's Empathic Voice Interface!")
 
@@ -34,13 +39,12 @@ def on_message(message):
             for emotion, score in top_emotions:
                 message_box += f"{emotion}: {score:.4f}\n"
 
-        # Store the content in the received messages list
-        received_messages.append(content)
+        received_messages.append({"role": role, "content": content})
+
     elif msg_type != "audio_output":
         for key, value in message.items():
             message_box += f"{key}: {value}\n"
-        # Store the message in the received messages list
-        received_messages.append(message)
+        received_messages.append({"role": "system", "content": message})
     else:
         message_box += f"type: {msg_type}\n"
 
@@ -63,6 +67,7 @@ def on_close():
     print_ascii_art("Thank you for using EVI, Hume AI's Empathic Voice Interface!")
 
 
+# Asynchronous handler for user input
 async def user_input_handler(socket: VoiceSocket):
     while True:
         user_input = await asyncio.to_thread(
@@ -77,7 +82,8 @@ async def user_input_handler(socket: VoiceSocket):
 
 
 # Main Function
-async def main():
+async def hume_main():
+    global socket_instance
     try:
         load_dotenv()
 
@@ -94,8 +100,22 @@ async def main():
             on_close=on_close,
             enable_audio=True,
         ) as socket:
+            socket_instance = socket  # Store the socket instance
             microphone_task = asyncio.create_task(MicrophoneInterface.start(socket))
             user_input_task = asyncio.create_task(user_input_handler(socket))
             await asyncio.gather(microphone_task, user_input_task)
     except Exception as e:
         print(f"Exception occurred: {e}")
+
+
+async def send_message_to_hume(message):
+    global socket_instance
+    if socket_instance:
+        await socket_instance.send_text_input(message)
+
+
+async def close_hume_socket():
+    global socket_instance
+    if socket_instance:
+        await socket_instance.close()
+        socket_instance = None
