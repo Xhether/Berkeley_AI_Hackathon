@@ -4,16 +4,12 @@ from dotenv import load_dotenv
 from helper_functions import print_ascii_art
 from hume import HumeVoiceClient, MicrophoneInterface, VoiceSocket
 
-# Load environment variables
-load_dotenv()
-
-# Global Variables
+# Global variables to store messages and count them
 message_counter = 0
 received_messages = []
-socket_instance = None  # Add a variable to store the WebSocket instance
+socket_instance = None
 
 
-# Event Handlers
 def on_open():
     print_ascii_art("Say hello to EVI, Hume AI's Empathic Voice Interface!")
 
@@ -39,11 +35,12 @@ def on_message(message):
             for emotion, score in top_emotions:
                 message_box += f"{emotion}: {score:.4f}\n"
 
+        # Store the content in the received messages list
         received_messages.append({"role": role, "content": content})
-
     elif msg_type != "audio_output":
         for key, value in message.items():
             message_box += f"{key}: {value}\n"
+        # Store the message in the received messages list
         received_messages.append({"role": "system", "content": message})
     else:
         message_box += f"type: {msg_type}\n"
@@ -67,7 +64,6 @@ def on_close():
     print_ascii_art("Thank you for using EVI, Hume AI's Empathic Voice Interface!")
 
 
-# Asynchronous handler for user input
 async def user_input_handler(socket: VoiceSocket):
     while True:
         user_input = await asyncio.to_thread(
@@ -100,10 +96,19 @@ async def hume_main():
             on_close=on_close,
             enable_audio=True,
         ) as socket:
+            print("WebSocket connection established")  # Debugging statement
             socket_instance = socket  # Store the socket instance
             microphone_task = asyncio.create_task(MicrophoneInterface.start(socket))
             user_input_task = asyncio.create_task(user_input_handler(socket))
-            await asyncio.gather(microphone_task, user_input_task)
+            try:
+                await asyncio.gather(microphone_task, user_input_task)
+            except asyncio.CancelledError:
+                microphone_task.cancel()
+                user_input_task.cancel()
+                await asyncio.gather(
+                    microphone_task, user_input_task, return_exceptions=True
+                )
+                raise
     except Exception as e:
         print(f"Exception occurred: {e}")
 
@@ -112,6 +117,7 @@ async def send_message_to_hume(message):
     global socket_instance
     if socket_instance:
         await socket_instance.send_text_input(message)
+        print(f"Sent message: {message}")  # Debugging statement
 
 
 async def close_hume_socket():
@@ -119,3 +125,4 @@ async def close_hume_socket():
     if socket_instance:
         await socket_instance.close()
         socket_instance = None
+        print("Closed WebSocket connection")  # Debugging statement

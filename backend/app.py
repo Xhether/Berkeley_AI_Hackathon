@@ -17,7 +17,6 @@ from hume_client import (
     close_hume_socket,
 )
 
-
 # Load environment variables from .env file
 load_dotenv()
 
@@ -47,10 +46,8 @@ def failure_response(message, code=404):
     return json.dumps({"success": False, "error": message}), code
 
 
-# Global variables for Hume AI chat
-received_messages = []
+# Global variable for chat session
 chat_session_active = False
-socket_instance = None  # Add a variable to store the WebSocket instance
 
 
 # Generate Client ID for Token Authentication
@@ -89,23 +86,19 @@ def hello_world():
 
 
 # -------Hume_AI--------#
-
-
-@app.route("/health", methods=["GET"])
-def health():
-    return success_response("Server is running", 200)
-
-
 @app.route("/api/start_chat", methods=["POST"])
 def start_chat():
-    global chat_session_active, received_messages, socket_instance
+    global chat_session_active, received_messages, hume_task
     if chat_session_active:
         return failure_response("Chat session already active", 400)
 
     try:
         received_messages.clear()
         chat_session_active = True
-        asyncio.run(hume_main())
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        hume_task = loop.create_task(hume_main())
+        loop.run_until_complete(hume_task)
         return success_response("Chat session started", 200)
     except Exception as e:
         return failure_response(str(e), 500)
@@ -122,7 +115,9 @@ def send_chat():
         if not user_message:
             return failure_response("No message provided", 400)
 
-        asyncio.run(send_message_to_hume(user_message))
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        loop.run_until_complete(send_message_to_hume(user_message))
         return success_response(received_messages, 200)
     except Exception as e:
         return failure_response(str(e), 500)
@@ -130,13 +125,37 @@ def send_chat():
 
 @app.route("/api/stop_chat", methods=["POST"])
 def stop_chat():
-    global chat_session_active
+    global chat_session_active, hume_task
     if not chat_session_active:
         return failure_response("No active chat session to stop", 400)
 
     chat_session_active = False
-    asyncio.run(close_hume_socket())
-    return success_response("Chat session stopped", 200)
+    if hume_task:
+        hume_task.cancel()
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    loop.run_until_complete(close_hume_socket())
+    return success_response(received_messages, 200)
+
+
+# Health Check endpoint
+@app.route("/health", methods=["GET"])
+def health():
+    return success_response("Server is running", 200)
+
+
+# Chat endpoint to interact with Hume client
+@app.route("/api/chat", methods=["POST"])
+def get_chat():
+    try:
+        # Clear the received_messages list before starting
+        received_messages.clear()
+
+        asyncio.run(hume_main())
+
+        return success_response(received_messages, 200)
+    except Exception as e:
+        return failure_response(str(e), 500)
 
 
 @app.route("/api/fetch_educational_resources", methods=["POST"])
@@ -160,6 +179,11 @@ def fetch_educational_resources():
 
     resources = response.json().get("hits", [])
     return success_response(resources)
+
+
+@app.route("/api/chat_history", methods=["GET"])
+def chat_history():
+    return success_response(received_messages)
 
 
 # --------USERS--------#
