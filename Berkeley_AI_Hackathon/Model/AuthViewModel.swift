@@ -7,7 +7,6 @@
 
 import Foundation
 import SwiftUI
-import Alamofire
 
 class AuthViewModel: ObservableObject {
     

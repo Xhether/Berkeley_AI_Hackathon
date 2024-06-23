@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Alamofire
+//import Alamofire
 import AVFAudio
 
 struct DefaultEnvironment: View {
@@ -23,12 +23,12 @@ struct DefaultEnvironment: View {
     
     var body: some View {
         NavigationStack{
-            ZStack{
+           /* ZStack{
                 Rectangle()
                     .foregroundStyle(
                         LinearGradient(colors: [Color.white,Color("blueG"),Color.white], startPoint: .topLeading, endPoint: .bottomTrailing))
                     .frame(width: 400,height: 900)
-                
+                */
                 VStack{
                     
                     Settings()
@@ -121,20 +121,19 @@ struct DefaultEnvironment: View {
   
 
     func startChat() {
-            let url = "http://localhost:8000/api/start_chat"
-          
-            AF.request(url, method: .post, encoding: JSONEncoding.default)
-                .responseJSON { response in
-                    switch response.result {
-                    case .success(let value):
-                        print("Response JSON: \(value)")
-                        self.responseMessage = "Success: \(value)"
-                    case .failure(let error):
-                        print("Error: \(error)")
-                        self.responseMessage = "Error: \(error.localizedDescription)"
+          //  let url = "http://localhost:8000/api/start_chat"
+       // AF.request(url, method: .post, encoding: JSONEncoding.default)
+            //    .responseJSON { response in
+            //       switch response.result {
+            //        case .success(let value):
+            //            print("Response JSON: \(value)")
+            //            self.responseMessage = "Success: \(value)"
+            //        case .failure(let error):
+            //            print("Error: \(error)")
+              //          self.responseMessage = "Error: \(error.localizedDescription)"
                     }
-               }
-        }
+               
+        
     
     func requestMicrophoneAccess(completion: @escaping (Bool) -> Void) {
         AVAudioSession.sharedInstance().requestRecordPermission { granted in
@@ -145,20 +144,19 @@ struct DefaultEnvironment: View {
     }
     
     func endChat() {
-        let url = "http://localhost:8000/api/end_chat"
-      
-        AF.request(url, method: .post, encoding: JSONEncoding.default)
-            .responseJSON { response in
-                switch response.result {
-                case .success(let value):
-                    print("Response JSON: \(value)")
-                    self.responseMessage = "Success: \(value)"
-                case .failure(let error):
-                    print("Error: \(error)")
-                    self.responseMessage = "Error: \(error.localizedDescription)"
-                }
-           }
-    }
+      //  let url = "http://localhost:8000/api/end_chat"
+      //  AF.request(url, method: .post, encoding: JSONEncoding.default)
+        //    .responseJSON { response in
+            //    switch response.result {
+               //case .success(let value):
+                 //   print("Response JSON: \(value)")
+                 //   self.responseMessage = "Success: \(value)"
+               // case .failure(let error):
+             //       print("Error: \(error)")
+          ///          self.responseMessage = "Error: \(error.localizedDescription)"
+        //        }
+      //     }
+    //}
 }
 
 #Preview {
