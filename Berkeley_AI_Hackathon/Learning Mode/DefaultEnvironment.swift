@@ -6,14 +6,21 @@
 //
 
 import SwiftUI
+import Alamofire
+import AVFAudio
 
 struct DefaultEnvironment: View {
     @State private var defaultPrompts = ["Ask Me About Newton's Second Law!", "Ask Me About Mathematical Induction!", "Ask Me About Graph Theory!"]
     @State private var started = false
     @State private var showMenu = false
+    @State var canRecord = false
+    @State private var responseMessage: String = "No response yet"
     @State private var currentIndex = 0
     private let timer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
     @State private var userPrompt = ""
+   
+    
+    
     var body: some View {
         NavigationStack{
             ZStack{
@@ -21,7 +28,7 @@ struct DefaultEnvironment: View {
                     .foregroundStyle(
                         LinearGradient(colors: [Color.white,Color("blueG"),Color.white], startPoint: .topLeading, endPoint: .bottomTrailing))
                     .frame(width: 400,height: 900)
-
+                
                 VStack{
                     
                     Settings()
@@ -64,14 +71,41 @@ struct DefaultEnvironment: View {
                                     currentIndex = (currentIndex + 1) % defaultPrompts.count
                                 }
                         }
-                        ZStack{
-                            Circle()
-                                .frame(width: 64,height: 64)
-                            Image(systemName: "mic")
-                                .foregroundColor(Color.white)
-                                .font(.system(size: 44))
-                        }.padding(.top)
-                    }
+                        
+                        if canRecord == false{
+                            Button{
+                                requestMicrophoneAccess { granted in
+                                    canRecord = granted
+                                }
+                            } label: {
+                                ZStack{
+                                    Circle()
+                                        .frame(width: 64,height: 64)
+                                    Image(systemName: "mic")
+                                        .foregroundColor(Color.white)
+                                        .font(.system(size: 44))
+                                }
+                            }.padding(.top)
+                        } else {
+                            Button{
+                                //if we don't hear audio above ..., we fire the message
+                                startChat()
+                            } label: {
+                                ZStack{
+                                    Circle()
+                                        .frame(width: 64,height: 64)
+                                        .foregroundColor(.red)
+                                    Image(systemName: "mic")
+                                        .foregroundColor(Color.white)
+                                        .font(.system(size: 44))
+                                }
+                            }.padding(.top)
+                        }
+                       
+                    
+                    
+                }
+
                     Text("Press to Speak")
                         .foregroundStyle(.gray)
                     
@@ -82,6 +116,48 @@ struct DefaultEnvironment: View {
                 }
             }
         }
+    }
+    
+  
+
+    func startChat() {
+            let url = "http://localhost:8000/api/start_chat"
+          
+            AF.request(url, method: .post, encoding: JSONEncoding.default)
+                .responseJSON { response in
+                    switch response.result {
+                    case .success(let value):
+                        print("Response JSON: \(value)")
+                        self.responseMessage = "Success: \(value)"
+                    case .failure(let error):
+                        print("Error: \(error)")
+                        self.responseMessage = "Error: \(error.localizedDescription)"
+                    }
+               }
+        }
+    
+    func requestMicrophoneAccess(completion: @escaping (Bool) -> Void) {
+        AVAudioSession.sharedInstance().requestRecordPermission { granted in
+            DispatchQueue.main.async {
+                completion(granted)
+            }
+        }
+    }
+    
+    func endChat() {
+        let url = "http://localhost:8000/api/end_chat"
+      
+        AF.request(url, method: .post, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    print("Response JSON: \(value)")
+                    self.responseMessage = "Success: \(value)"
+                case .failure(let error):
+                    print("Error: \(error)")
+                    self.responseMessage = "Error: \(error.localizedDescription)"
+                }
+           }
     }
 }
 

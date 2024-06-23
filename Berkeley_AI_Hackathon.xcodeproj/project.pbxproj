@@ -30,6 +30,19 @@
 		2E5797782C27EF6F004B737F /* WhatisXResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5797772C27EF6F004B737F /* WhatisXResponse.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2E57977A2C2835B0004B737F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2E5797332C27696A004B737F /* Berkeley_AI_Hackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Berkeley_AI_Hackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E5797362C27696A004B737F /* Berkeley_AI_HackathonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Berkeley_AI_HackathonApp.swift; sourceTree = "<group>"; };
@@ -197,6 +210,7 @@
 				2E57972F2C27696A004B737F /* Sources */,
 				2E5797302C27696A004B737F /* Frameworks */,
 				2E5797312C27696A004B737F /* Resources */,
+				2E57977A2C2835B0004B737F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -418,6 +432,7 @@
 				DEVELOPMENT_TEAM = ZBGGP4D9H5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = Yes;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -447,6 +462,7 @@
 				DEVELOPMENT_TEAM = ZBGGP4D9H5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = Yes;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
