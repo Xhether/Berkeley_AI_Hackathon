@@ -17,55 +17,7 @@ struct DefaultEnvironment: View {
     var body: some View {
         NavigationStack{
             VStack{
-                HStack{
-                    Button(action: {
-                        self.showMenu.toggle()
-                    }, label: {
-                        Image(systemName: "line.3.horizontal")
-                            .font(.system(size: 30))
-                            .padding(.leading,20)
-                            .foregroundColor(.black)
-                    })
-                    Spacer()
-                    
-                    Circle()
-                        .frame(width:30,height: 30)
-                        .padding(.trailing)
-                    
-                }
-                
-                if showMenu == true{
-                    ZStack{
-                        RoundedRectangle(cornerRadius: 10)
-                            .frame(width: 200,height: 64)
-                            .padding(.trailing,120)
-                            .foregroundColor(.gray)
-                        
-                        VStack{
-                            NavigationLink{
-                                Settings()
-                            } label: {
-                                Text("Settings")
-                                    .foregroundStyle(.black)
-                            }
-                            Divider()
-                                .frame(width: 200)
-                            NavigationLink{
-                                GrowthSpace()
-                            } label: {
-                                Text("Growth Space")
-                                    .foregroundStyle(.black)
-                                
-                            }
-                        }.padding(.trailing,116)
-                    
-                        }
-                    
-                }
-                
-                
-                
-                
+                Settings()
                 Spacer()
                 if started != true{
                     ZStack{
@@ -84,10 +36,10 @@ struct DefaultEnvironment: View {
                     }
                     ZStack{
                         Circle()
-                            .frame(width: 80,height: 80)
+                            .frame(width: 64,height: 64)
                         Image(systemName: "mic")
                             .foregroundColor(Color.white)
-                            .font(.system(size: 52))
+                            .font(.system(size: 48))
                     }
                 }
                 
@@ -104,7 +56,7 @@ struct DefaultEnvironment: View {
                 }
                 //grab final userprompt each time and query a response from ai...
                 //once we grab some speech or a prompt is typed, change started to true...
-                
+                //
             }
         }
     }
