@@ -77,14 +77,6 @@ def hello_world():
 
 
 # -------Hume_AI--------#
-# Start Hume Client endpoint (example)
-@app.route("/api/start_hume_client", methods=["POST"])
-def start_hume_client():
-    try:
-        subprocess.Popen(["python", "hume_client.py"])
-        return success_response("Hume client started.", 200)
-    except Exception as e:
-        return failure_response(str(e), 500)
 
 
 # Health Check endpoint
