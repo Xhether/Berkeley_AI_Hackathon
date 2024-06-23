@@ -15,9 +15,10 @@
 		2E57974D2C2792FA004B737F /* TopCommunities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57974C2C2792FA004B737F /* TopCommunities.swift */; };
 		2E57974F2C279318004B737F /* Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57974E2C279318004B737F /* Configurations.swift */; };
 		2E5797512C27939E004B737F /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5797502C27939E004B737F /* Home.swift */; };
-		2E5797572C279710004B737F /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5797562C279710004B737F /* Menu.swift */; };
 		2E57975A2C2797B1004B737F /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5797592C2797B1004B737F /* AuthViewModel.swift */; };
 		2E57975C2C27987F004B737F /* DefaultEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57975B2C27987F004B737F /* DefaultEnvironment.swift */; };
+		2E57975E2C27B06A004B737F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57975D2C27B06A004B737F /* Settings.swift */; };
+		2E5797602C27B15A004B737F /* GrowthSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57975F2C27B15A004B737F /* GrowthSpace.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,9 +31,10 @@
 		2E57974C2C2792FA004B737F /* TopCommunities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCommunities.swift; sourceTree = "<group>"; };
 		2E57974E2C279318004B737F /* Configurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurations.swift; sourceTree = "<group>"; };
 		2E5797502C27939E004B737F /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
-		2E5797562C279710004B737F /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		2E5797592C2797B1004B737F /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		2E57975B2C27987F004B737F /* DefaultEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultEnvironment.swift; sourceTree = "<group>"; };
+		2E57975D2C27B06A004B737F /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		2E57975F2C27B15A004B737F /* GrowthSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthSpace.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +99,7 @@
 		2E5797462C279253004B737F /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				2E5797562C279710004B737F /* Menu.swift */,
+				2E57975D2C27B06A004B737F /* Settings.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				2E57974A2C2792CC004B737F /* TopLearningPlatforms.swift */,
+				2E57975F2C27B15A004B737F /* GrowthSpace.swift */,
 				2E57974C2C2792FA004B737F /* TopCommunities.swift */,
 				2E5797482C27928B004B737F /* Problem Session */,
 			);
@@ -216,11 +219,12 @@
 			files = (
 				2E57974B2C2792CC004B737F /* TopLearningPlatforms.swift in Sources */,
 				2E57974F2C279318004B737F /* Configurations.swift in Sources */,
-				2E5797572C279710004B737F /* Menu.swift in Sources */,
 				2E5797392C27696A004B737F /* ContentView.swift in Sources */,
 				2E57975A2C2797B1004B737F /* AuthViewModel.swift in Sources */,
 				2E5797372C27696A004B737F /* Berkeley_AI_HackathonApp.swift in Sources */,
 				2E5797512C27939E004B737F /* Home.swift in Sources */,
+				2E57975E2C27B06A004B737F /* Settings.swift in Sources */,
+				2E5797602C27B15A004B737F /* GrowthSpace.swift in Sources */,
 				2E57974D2C2792FA004B737F /* TopCommunities.swift in Sources */,
 				2E57975C2C27987F004B737F /* DefaultEnvironment.swift in Sources */,
 			);
