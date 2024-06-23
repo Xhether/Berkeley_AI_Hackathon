@@ -43,6 +43,7 @@ struct Settings: View{
                     }
                     Divider()
                         .frame(width: 200)
+                        
                     NavigationLink{
                         GrowthSpace(configs: Configurations(id: UUID(), favSubject: "Computer Science", courses: [], topics: [], level: "Medium"))
                     } label: {

@@ -16,47 +16,70 @@ struct DefaultEnvironment: View {
     @State private var userPrompt = ""
     var body: some View {
         NavigationStack{
-            VStack{
-                Settings()
-                Spacer()
-                if started != true{
-                    ZStack{
-                        RoundedRectangle(cornerRadius: 10.0)
-                            .frame(width: 360,height: 100)
-                            .foregroundColor(.gray)
-                        
-                        Text(defaultPrompts[currentIndex])
-                            .font(.title)
-                            .frame(width: 360, height: 100)
-                            .transition(.opacity)
-                            .onReceive(timer) { _ in
-                                // Update the current index, wrapping around to the start if necessary
-                                currentIndex = (currentIndex + 1) % defaultPrompts.count
-                            }
-                    }
-                    ZStack{
-                        Circle()
-                            .frame(width: 64,height: 64)
-                        Image(systemName: "mic")
-                            .foregroundColor(Color.white)
-                            .font(.system(size: 48))
-                    }
-                }
-                
-                ZStack{
-                    RoundedRectangle(cornerRadius: 10)
-                        .foregroundColor(.gray)
-                        .frame(width: 360, height: 36)
+            ZStack{
+                Rectangle()
+                    .foregroundStyle(
+                        LinearGradient(colors: [Color.white,Color("blueG"),Color.white], startPoint: .topLeading, endPoint: .bottomTrailing))
+                    .frame(width: 400,height: 900)
+
+                VStack{
                     
-                    TextField(
-                        "Feel like Typing?",
-                        text: $userPrompt
-                    )
-                    .padding(.leading, 30 )
+                    Settings()
+                        .padding(.top,64)
+                    Spacer()
+                    
+                    HStack{
+                        RoundedRectangle(cornerRadius: 10)
+                            .frame(width: 48, height: 148)
+                        
+                        RoundedRectangle(cornerRadius: 10)
+                            .frame(width: 48, height: 100)
+                            .padding(.top,48)
+                        
+                        RoundedRectangle(cornerRadius: 10)
+                            .frame(width: 48, height: 100)
+                            .padding(.top,48)
+                        
+                        RoundedRectangle(cornerRadius: 10)
+                            .frame(width: 48, height: 148)
+                        
+                    }.padding(.bottom,36)
+                    
+                    if started != true{
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 10.0)
+                                .frame(width: 360,height: 100)
+                                .foregroundColor(.white)
+                                .overlay( /// apply a rounded border
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(.black, lineWidth: 2)
+                                )
+                            
+                            Text(defaultPrompts[currentIndex])
+                                .font(.title)
+                                .frame(width: 320, height: 100)
+                                .transition(.opacity)
+                                .onReceive(timer) { _ in
+                                    // Update the current index, wrapping around to the start if necessary
+                                    currentIndex = (currentIndex + 1) % defaultPrompts.count
+                                }
+                        }
+                        ZStack{
+                            Circle()
+                                .frame(width: 64,height: 64)
+                            Image(systemName: "mic")
+                                .foregroundColor(Color.white)
+                                .font(.system(size: 44))
+                        }.padding(.top)
+                    }
+                    Text("Press to Speak")
+                        .foregroundStyle(.gray)
+                    
+                    //send voice,
+                    
+                    
+                    Spacer()
                 }
-                //grab final userprompt each time and query a response from ai...
-                //once we grab some speech or a prompt is typed, change started to true...
-                //
             }
         }
     }
