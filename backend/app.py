@@ -78,7 +78,7 @@ def hello_world():
 
 # -------Hume_AI--------#
 # Start Hume Client endpoint (example)
-@app.route("/start_hume_client", methods=["POST"])
+@app.route("/api/start_hume_client", methods=["POST"])
 def start_hume_client():
     try:
         subprocess.Popen(["python", "hume_client.py"])
@@ -105,6 +105,29 @@ def send_chat():
         return success_response(received_messages, 200)
     except Exception as e:
         return failure_response(str(e), 500)
+
+
+@app.route("/api/fetch_educational_resources", methods=["POST"])
+def fetch_educational_resources():
+    data = request.json
+    topic = data.get("topic")
+    if not topic:
+        return failure_response("No topic provided", 400)
+
+    api_key = os.getenv("YOU_API_KEY")
+    url = "https://api.ydc-index.io/search"
+    headers = {"X-API-Key": api_key}
+    params = {
+        "query": topic,
+        "num_web_results": 5,  # Adjust the number of results as needed
+    }
+
+    response = requests.get(url, headers=headers, params=params)
+    if response.status_code != 200:
+        return failure_response("Failed to fetch educational resources", 500)
+
+    resources = response.json().get("hits", [])
+    return success_response(resources)
 
 
 # --------USERS--------#

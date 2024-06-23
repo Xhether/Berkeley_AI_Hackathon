@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from helper_functions import print_ascii_art
 from hume import HumeVoiceClient, MicrophoneInterface, VoiceSocket
 
-# Global variable to count messages
+# Global variables to store messages and count them
 message_counter = 0
 received_messages = []
 
@@ -76,14 +76,15 @@ async def user_input_handler(socket: VoiceSocket):
             await socket.send_text_input(user_input)
 
 
-async def main() -> None:
+async def main():
     try:
         load_dotenv()
 
         HUME_API_KEY = os.getenv("HUME_API_KEY")
         HUME_SECRET_KEY = os.getenv("HUME_SECRET_KEY")
+        HUME_CONFIG_ID = os.getenv("HUME_CONFIG_ID")
 
-        client = HumeVoiceClient(HUME_API_KEY, HUME_SECRET_KEY)
+        client = HumeVoiceClient(HUME_API_KEY, HUME_SECRET_KEY, HUME_CONFIG_ID)
 
         async with client.connect_with_handlers(
             on_open=on_open,
@@ -94,10 +95,6 @@ async def main() -> None:
         ) as socket:
             microphone_task = asyncio.create_task(MicrophoneInterface.start(socket))
             user_input_task = asyncio.create_task(user_input_handler(socket))
-
             await asyncio.gather(microphone_task, user_input_task)
     except Exception as e:
         print(f"Exception occurred: {e}")
-
-
-asyncio.run(main())
