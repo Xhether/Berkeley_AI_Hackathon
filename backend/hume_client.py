@@ -36,12 +36,12 @@ def on_message(message):
                 message_box += f"{emotion}: {score:.4f}\n"
 
         # Store the content in the received messages list
-        received_messages.append({"role": role, "content": content})
+        received_messages.append(content)
     elif msg_type != "audio_output":
         for key, value in message.items():
             message_box += f"{key}: {value}\n"
         # Store the message in the received messages list
-        received_messages.append({"role": "system", "content": message})
+        received_messages.append(message)
     else:
         message_box += f"type: {msg_type}\n"
 
@@ -78,15 +78,15 @@ async def user_input_handler(socket: VoiceSocket):
 
 
 # Main Function
-async def hume_main():
-    global socket_instance
+async def hume_main() -> None:
     try:
         load_dotenv()
 
         HUME_API_KEY = os.getenv("HUME_API_KEY")
+        HUME_SECRET_KEY = os.getenv("HUME_SECRET_KEY")
         HUME_CONFIG_ID = os.getenv("HUME_CONFIG_ID")
 
-        client = HumeVoiceClient(HUME_API_KEY)
+        client = HumeVoiceClient(HUME_API_KEY, HUME_SECRET_KEY)
 
         async with client.connect_with_handlers(
             config_id=HUME_CONFIG_ID,
@@ -96,19 +96,12 @@ async def hume_main():
             on_close=on_close,
             enable_audio=True,
         ) as socket:
-            print("WebSocket connection established")  # Debugging statement
-            socket_instance = socket  # Store the socket instance
             microphone_task = asyncio.create_task(MicrophoneInterface.start(socket))
             user_input_task = asyncio.create_task(user_input_handler(socket))
-            try:
-                await asyncio.gather(microphone_task, user_input_task)
-            except asyncio.CancelledError:
-                microphone_task.cancel()
-                user_input_task.cancel()
-                await asyncio.gather(
-                    microphone_task, user_input_task, return_exceptions=True
-                )
-                raise
+
+            await asyncio.gather(microphone_task, user_input_task)
+    except asyncio.CancelledError:
+        print("Asyncio task was cancelled.")
     except Exception as e:
         print(f"Exception occurred: {e}")
 

@@ -49,14 +49,12 @@ struct Settings: View{
                     } label: {
                         Text("Growth Space")
                             .foregroundStyle(.black)
-                        
                     }
                 }.padding(.trailing,116)
-            
-         }
-        }
-        
-      }
+                    .navigationBarBackButtonHidden(true)
+            }
+          }
+       }
     }
     
     #Preview {

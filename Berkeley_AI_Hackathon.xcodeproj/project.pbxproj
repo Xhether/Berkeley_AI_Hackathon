@@ -25,6 +25,7 @@
 		2E5797742C27E831004B737F /* LearningPlatforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5797732C27E831004B737F /* LearningPlatforms.swift */; };
 		2E5797762C27E83D004B737F /* Communities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5797752C27E83D004B737F /* Communities.swift */; };
 		2E5797782C27EF6F004B737F /* WhatisXResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5797772C27EF6F004B737F /* WhatisXResponse.swift */; };
+		2EDD2A932C2880360005AB20 /* gptNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDD2A922C2880360005AB20 /* gptNetworking.swift */; };
 		DDA2A647105853654DBC646B /* Pods_Berkeley_AI_Hackathon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E59852CADBFE1ED1BDB1CCB /* Pods_Berkeley_AI_Hackathon.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		2E5797732C27E831004B737F /* LearningPlatforms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningPlatforms.swift; sourceTree = "<group>"; };
 		2E5797752C27E83D004B737F /* Communities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Communities.swift; sourceTree = "<group>"; };
 		2E5797772C27EF6F004B737F /* WhatisXResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatisXResponse.swift; sourceTree = "<group>"; };
+		2EDD2A922C2880360005AB20 /* gptNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gptNetworking.swift; sourceTree = "<group>"; };
 		73410D8637E7D4AC4082134E /* Pods-Berkeley_AI_Hackathon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Berkeley_AI_Hackathon.release.xcconfig"; path = "Target Support Files/Pods-Berkeley_AI_Hackathon/Pods-Berkeley_AI_Hackathon.release.xcconfig"; sourceTree = "<group>"; };
 		9E59852CADBFE1ED1BDB1CCB /* Pods_Berkeley_AI_Hackathon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Berkeley_AI_Hackathon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				2E5797592C2797B1004B737F /* AuthViewModel.swift */,
+				2EDD2A922C2880360005AB20 /* gptNetworking.swift */,
 				2E5797692C27DA3D004B737F /* Models */,
 			);
 			path = Model;
@@ -348,6 +351,7 @@
 				2E57975E2C27B06A004B737F /* Settings.swift in Sources */,
 				2E57976F2C27DD08004B737F /* ProblemSeshChat.swift in Sources */,
 				2E5797602C27B15A004B737F /* GrowthSpace.swift in Sources */,
+				2EDD2A932C2880360005AB20 /* gptNetworking.swift in Sources */,
 				2E57974D2C2792FA004B737F /* TopCommunities.swift in Sources */,
 				2E5797762C27E83D004B737F /* Communities.swift in Sources */,
 				2E57975C2C27987F004B737F /* DefaultEnvironment.swift in Sources */,

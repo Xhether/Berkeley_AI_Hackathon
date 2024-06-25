@@ -132,10 +132,16 @@ def stop_chat():
     chat_session_active = False
     if hume_task:
         hume_task.cancel()
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-    loop.run_until_complete(close_hume_socket())
-    return success_response(received_messages, 200)
+
+    try:
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        loop.run_until_complete(close_hume_socket())
+        return success_response(received_messages, 200)
+    except asyncio.CancelledError:
+        return success_response(received_messages, 200)
+    except Exception as e:
+        return failure_response(str(e), 500)
 
 
 # Health Check endpoint
@@ -323,7 +329,8 @@ Returns serialization of all decks in a class that are either public or private 
 
 @app.route("/api/users/<int:user_id>/classes/<int:class_id>/decks/", methods=["GET"])
 def get_class_decks(user_id, class_id):
-    desired_class = Class.query.get(class_id)  # note 0, 1, and 2 class id numbering
+    # note 0, 1, and 2 class id numbering
+    desired_class = Class.query.get(class_id)
     if desired_class is None:
         return failure_response("No such class", 400)
 
@@ -351,7 +358,8 @@ Returns random quiz mode of 3 cards in each decks within the class
     "/api/users/<int:user_id>/classes/<int:class_id>/decks/quiz_mode", methods=["GET"]
 )
 def quiz_mode(class_id, user_id):
-    desired_class = Class.query.get(class_id)  # note 0, 1, and 2 class id numbering
+    # note 0, 1, and 2 class id numbering
+    desired_class = Class.query.get(class_id)
     if desired_class is None:
         return failure_response("No such class", 400)
 
@@ -398,7 +406,8 @@ def create_deck(user_id, class_id):
         return failure_response("User not found")
 
     # Might make deck private by default, but for now, it is public.
-    new_deck = Deck(title=title, class_id=class_id, user_id=user_id, is_public=True)
+    new_deck = Deck(title=title, class_id=class_id,
+                    user_id=user_id, is_public=True)
     db.session.add(new_deck)
     db.session.commit()
     return success_response(new_deck.serialize(), 201)

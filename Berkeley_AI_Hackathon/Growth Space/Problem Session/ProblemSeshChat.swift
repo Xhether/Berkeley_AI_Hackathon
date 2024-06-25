@@ -5,4 +5,11 @@
 //  Created by Charles Liggins on 6/22/24.
 //
 
-import Foundation
+import SwiftUI
+
+struct ProblemSeshChat: View {
+    var body: some View {
+        Text("")
+        
+    }
+}

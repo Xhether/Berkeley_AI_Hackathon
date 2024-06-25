@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-//import Alamofire
+import Alamofire
 import AVFAudio
 
 struct DefaultEnvironment: View {
@@ -14,11 +14,11 @@ struct DefaultEnvironment: View {
     @State private var started = false
     @State private var showMenu = false
     @State var canRecord = false
-    @State private var responseMessage: String = "No response yet"
+    @State var responseMessage: String = "No response yet"
     @State private var currentIndex = 0
     private let timer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
     @State private var userPrompt = ""
-   
+    @StateObject private var networkManager = NetworkManager()
     
     
     var body: some View {
@@ -89,7 +89,7 @@ struct DefaultEnvironment: View {
                         } else {
                             Button{
                                 //if we don't hear audio above ..., we fire the message
-                                startChat()
+                                networkManager.startChat()
                             } label: {
                                 ZStack{
                                     Circle()
@@ -114,25 +114,28 @@ struct DefaultEnvironment: View {
                     
                     Spacer()
                 }
-            }
+            }.navigationBarBackButtonHidden(true)
         }
     }
+
     
   
+ /*
+func startChat() {
+    let url = "http://localhost:8000/api/start_chat"
+    AF.request(url, method: .post, encoding: JSONEncoding.default)
+        .responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                print("Response JSON: \(value)")
+                //self.responseMessage = "Success: \(value)"
+            case .failure(let error):
+                print("Error: \(error)")
+                //self.responseMessage = "Error: \(error.localizedDescription)"
+            }
+        }
+}*/
 
-    func startChat() {
-          //  let url = "http://localhost:8000/api/start_chat"
-       // AF.request(url, method: .post, encoding: JSONEncoding.default)
-            //    .responseJSON { response in
-            //       switch response.result {
-            //        case .success(let value):
-            //            print("Response JSON: \(value)")
-            //            self.responseMessage = "Success: \(value)"
-            //        case .failure(let error):
-            //            print("Error: \(error)")
-              //          self.responseMessage = "Error: \(error.localizedDescription)"
-                    }
-               
         
     
     func requestMicrophoneAccess(completion: @escaping (Bool) -> Void) {
@@ -142,22 +145,23 @@ struct DefaultEnvironment: View {
             }
         }
     }
-    
+
+
     func endChat() {
-      //  let url = "http://localhost:8000/api/end_chat"
-      //  AF.request(url, method: .post, encoding: JSONEncoding.default)
-        //    .responseJSON { response in
-            //    switch response.result {
-               //case .success(let value):
-                 //   print("Response JSON: \(value)")
-                 //   self.responseMessage = "Success: \(value)"
-               // case .failure(let error):
-             //       print("Error: \(error)")
-          ///          self.responseMessage = "Error: \(error.localizedDescription)"
-        //        }
-      //     }
-    //}
-}
+        let url = "http://localhost:8000/api/end_chat"
+        AF.request(url, method: .post, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                switch response.result {
+               case .success(let value):
+                    print("Response JSON: \(value)")
+                    //self.responseMessage = "Success: \(value)"
+                case .failure(let error):
+                    print("Error: \(error)")
+                    //self.responseMessage = "Error: \(error.localizedDescription)"
+                }
+           }
+    }
+
 
 #Preview {
     DefaultEnvironment()

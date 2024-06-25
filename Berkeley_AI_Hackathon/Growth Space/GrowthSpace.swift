@@ -21,8 +21,8 @@ struct GrowthSpace: View {
     let communities = ["Kaggle", "Girls Who Code", "Colorstack", "Reddit"]
     
     var body: some View {
-        
-        NavigationStack{
+        ScrollView(.vertical){
+            NavigationStack{
                 VStack{
                     Settings()
                     
@@ -55,6 +55,7 @@ struct GrowthSpace: View {
                                                 
                                             )
                                         Text(platform)
+                                            .foregroundStyle(.black)
                                     }
                                 }
                             }
@@ -79,6 +80,7 @@ struct GrowthSpace: View {
                                                 
                                             )
                                         Text(community)
+                                            .foregroundStyle(.black)
                                     }
                                 }
                             }
@@ -97,8 +99,34 @@ struct GrowthSpace: View {
                     .padding(.trailing, 172)
                     .padding(.top,28)
                     
+                    VStack(alignment: .leading){
+                        Text("Courses:")
+                        Text(" - Discrete Mathematics")
+                        Text(" - Object Oriented Programming ")
+                        Text("Topics:")
+                        Text(" - Trees")
+                        Text(" - Graphs")
+                        Text(" - Heaps")
+                        Text(" - Logic")
+                        Text("Levels:")
+                        Text("Medium (Recommended)")
+
+                    }
+                    
+                    NavigationLink {
+                        ProblemSeshChat()
+                    } label: {
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 10)
+                                .frame(width: 336, height: 58)
+                                .foregroundColor(.gray)
+                            Text("Begin Problem Session")
+                                .foregroundStyle(.black)
+                        }
+                    }
                     Spacer()
-            }
+                }
+            }.navigationBarBackButtonHidden(true)
         }
     }
 }
