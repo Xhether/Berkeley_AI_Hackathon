@@ -18,8 +18,7 @@ struct DefaultEnvironment: View {
     @State private var currentIndex = 0
     private let timer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
     @State private var userPrompt = ""
-    @StateObject private var networkManager = NetworkManager()
-    
+    //@StateObject private var networkManager = NetworkManager()
     
     var body: some View {
         NavigationStack{
@@ -28,30 +27,12 @@ struct DefaultEnvironment: View {
                         .padding(.top,64)
                     Spacer()
                     
-                    //content
+                  // content
+                    
                     voiceBar
                     
-                    
                     if started != true{
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 10.0)
-                                .frame(width: 360,height: 100)
-                                .foregroundColor(.white)
-                                .overlay( /// apply a rounded border
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .stroke(.black, lineWidth: 2)
-                                )
-                            
-                            Text(defaultPrompts[currentIndex])
-                                .font(.title)
-                                .frame(width: 320, height: 100)
-                                .transition(.opacity)
-                                .onReceive(timer) { _ in
-                                    // Update the current index, wrapping around to the start if necessary
-                                    currentIndex = (currentIndex + 1) % defaultPrompts.count
-                                }
-                        }
-                        
+                        rotatingText
                         if canRecord == false{
                             Button{
                                 requestMicrophoneAccess { granted in
@@ -68,8 +49,8 @@ struct DefaultEnvironment: View {
                             }.padding(.top)
                         } else {
                             Button{
-                                //if we don't hear audio above ..., we fire the message
-                                networkManager.startChat()
+                    //   if we don't hear audio above ..., we fire the message
+                    //   networkManager.startChat()
                             } label: {
                                 ZStack{
                                     Circle()
@@ -81,9 +62,6 @@ struct DefaultEnvironment: View {
                                 }
                             }.padding(.top)
                         }
-                       
-                    
-                    
                 }
 
                     Text("Press to Speak")
@@ -101,6 +79,22 @@ struct DefaultEnvironment: View {
     }
     
     //view variables
+    var rotatingText: some View{
+        
+                Text(defaultPrompts[currentIndex])
+                .font(.title)
+                .frame(width: 320, height: 100)
+                .transition(.opacity)
+                .overlay( /// apply a rounded border
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(.black, lineWidth: 2)
+                    )
+                .onReceive(timer) { _ in
+                    // Update the current index, wrapping around to the start if necessary
+                    currentIndex = (currentIndex + 1) % defaultPrompts.count
+        }
+    }
+    
     var voiceBar: some View{
         HStack{
             largeBar

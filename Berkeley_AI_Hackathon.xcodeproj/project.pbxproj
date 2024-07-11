@@ -11,10 +11,7 @@
 		2E5797392C27696A004B737F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5797382C27696A004B737F /* ContentView.swift */; };
 		2E57973B2C27696B004B737F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E57973A2C27696B004B737F /* Assets.xcassets */; };
 		2E57973E2C27696B004B737F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E57973D2C27696B004B737F /* Preview Assets.xcassets */; };
-		2E57974B2C2792CC004B737F /* TopLearningPlatforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57974A2C2792CC004B737F /* TopLearningPlatforms.swift */; };
-		2E57974D2C2792FA004B737F /* TopCommunities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57974C2C2792FA004B737F /* TopCommunities.swift */; };
 		2E5797512C27939E004B737F /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5797502C27939E004B737F /* Home.swift */; };
-		2E57975A2C2797B1004B737F /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5797592C2797B1004B737F /* AuthViewModel.swift */; };
 		2E57975C2C27987F004B737F /* DefaultEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57975B2C27987F004B737F /* DefaultEnvironment.swift */; };
 		2E57975E2C27B06A004B737F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57975D2C27B06A004B737F /* Settings.swift */; };
 		2E5797602C27B15A004B737F /* GrowthSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57975F2C27B15A004B737F /* GrowthSpace.swift */; };
@@ -23,11 +20,11 @@
 		2E57976F2C27DD08004B737F /* ProblemSeshChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57976E2C27DD08004B737F /* ProblemSeshChat.swift */; };
 		2E5797712C27E0AA004B737F /* ConfigurationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5797702C27E0AA004B737F /* ConfigurationsView.swift */; };
 		2E5797742C27E831004B737F /* LearningPlatforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5797732C27E831004B737F /* LearningPlatforms.swift */; };
-		2E5797762C27E83D004B737F /* Communities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5797752C27E83D004B737F /* Communities.swift */; };
 		2E5797782C27EF6F004B737F /* WhatisXResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5797772C27EF6F004B737F /* WhatisXResponse.swift */; };
 		2EBB07342C3F5BE20063FE15 /* Berkeley_AI_HackathonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBB07332C3F5BE20063FE15 /* Berkeley_AI_HackathonTests.swift */; };
 		2EBB073D2C3F5DB60063FE15 /* FunctionsTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBB073C2C3F5DB60063FE15 /* FunctionsTesting.swift */; };
-		2EDD2A932C2880360005AB20 /* gptNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDD2A922C2880360005AB20 /* gptNetworking.swift */; };
+		2EBB07462C3F7A440063FE15 /* DefaultEnvironmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBB07452C3F7A440063FE15 /* DefaultEnvironmentModel.swift */; };
+		2EBB07482C3F7A770063FE15 /* GrowthSpaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBB07472C3F7A770063FE15 /* GrowthSpaceModel.swift */; };
 		DDA2A647105853654DBC646B /* Pods_Berkeley_AI_Hackathon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E59852CADBFE1ED1BDB1CCB /* Pods_Berkeley_AI_Hackathon.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,10 +58,7 @@
 		2E5797382C27696A004B737F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2E57973A2C27696B004B737F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E57973D2C27696B004B737F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		2E57974A2C2792CC004B737F /* TopLearningPlatforms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopLearningPlatforms.swift; sourceTree = "<group>"; };
-		2E57974C2C2792FA004B737F /* TopCommunities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCommunities.swift; sourceTree = "<group>"; };
 		2E5797502C27939E004B737F /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
-		2E5797592C2797B1004B737F /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		2E57975B2C27987F004B737F /* DefaultEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultEnvironment.swift; sourceTree = "<group>"; };
 		2E57975D2C27B06A004B737F /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		2E57975F2C27B15A004B737F /* GrowthSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthSpace.swift; sourceTree = "<group>"; };
@@ -73,12 +67,12 @@
 		2E57976E2C27DD08004B737F /* ProblemSeshChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemSeshChat.swift; sourceTree = "<group>"; };
 		2E5797702C27E0AA004B737F /* ConfigurationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationsView.swift; sourceTree = "<group>"; };
 		2E5797732C27E831004B737F /* LearningPlatforms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningPlatforms.swift; sourceTree = "<group>"; };
-		2E5797752C27E83D004B737F /* Communities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Communities.swift; sourceTree = "<group>"; };
 		2E5797772C27EF6F004B737F /* WhatisXResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatisXResponse.swift; sourceTree = "<group>"; };
 		2EBB07312C3F5BE20063FE15 /* Berkeley_AI_HackathonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Berkeley_AI_HackathonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EBB07332C3F5BE20063FE15 /* Berkeley_AI_HackathonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Berkeley_AI_HackathonTests.swift; sourceTree = "<group>"; };
 		2EBB073C2C3F5DB60063FE15 /* FunctionsTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionsTesting.swift; sourceTree = "<group>"; };
-		2EDD2A922C2880360005AB20 /* gptNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gptNetworking.swift; sourceTree = "<group>"; };
+		2EBB07452C3F7A440063FE15 /* DefaultEnvironmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultEnvironmentModel.swift; sourceTree = "<group>"; };
+		2EBB07472C3F7A770063FE15 /* GrowthSpaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthSpaceModel.swift; sourceTree = "<group>"; };
 		73410D8637E7D4AC4082134E /* Pods-Berkeley_AI_Hackathon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Berkeley_AI_Hackathon.release.xcconfig"; path = "Target Support Files/Pods-Berkeley_AI_Hackathon/Pods-Berkeley_AI_Hackathon.release.xcconfig"; sourceTree = "<group>"; };
 		9E59852CADBFE1ED1BDB1CCB /* Pods_Berkeley_AI_Hackathon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Berkeley_AI_Hackathon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -125,14 +119,10 @@
 		2E5797352C27696A004B737F /* Berkeley_AI_Hackathon */ = {
 			isa = PBXGroup;
 			children = (
-				2E5797362C27696A004B737F /* Berkeley_AI_HackathonApp.swift */,
-				2EBB073C2C3F5DB60063FE15 /* FunctionsTesting.swift */,
-				2E5797472C27926D004B737F /* Growth Space */,
-				2E5797582C279792004B737F /* Learning Mode */,
-				2E5797522C2795D8004B737F /* Model */,
-				2E5797462C279253004B737F /* Settings */,
+				2EBB074F2C3F7C610063FE15 /* Utilities */,
 				2E5797532C279631004B737F /* Root */,
-				2E5797452C276A19004B737F /* Home */,
+				2EBB073F2C3F756F0063FE15 /* Views */,
+				2E5797692C27DA3D004B737F /* Models */,
 				2E57973A2C27696B004B737F /* Assets.xcassets */,
 				2E57973C2C27696B004B737F /* Preview Content */,
 			);
@@ -147,14 +137,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		2E5797452C276A19004B737F /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				2E5797502C27939E004B737F /* Home.swift */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
 		2E5797462C279253004B737F /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,47 +149,20 @@
 		2E5797472C27926D004B737F /* Growth Space */ = {
 			isa = PBXGroup;
 			children = (
-				2E57974A2C2792CC004B737F /* TopLearningPlatforms.swift */,
 				2E57975F2C27B15A004B737F /* GrowthSpace.swift */,
-				2E57974C2C2792FA004B737F /* TopCommunities.swift */,
-				2E5797722C27E7FB004B737F /* Major */,
-				2E5797482C27928B004B737F /* Problem Session */,
+				2EBB07472C3F7A770063FE15 /* GrowthSpaceModel.swift */,
 			);
 			path = "Growth Space";
-			sourceTree = "<group>";
-		};
-		2E5797482C27928B004B737F /* Problem Session */ = {
-			isa = PBXGroup;
-			children = (
-				2E57976E2C27DD08004B737F /* ProblemSeshChat.swift */,
-			);
-			path = "Problem Session";
-			sourceTree = "<group>";
-		};
-		2E5797522C2795D8004B737F /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				2E5797592C2797B1004B737F /* AuthViewModel.swift */,
-				2EDD2A922C2880360005AB20 /* gptNetworking.swift */,
-				2E5797692C27DA3D004B737F /* Models */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		2E5797532C279631004B737F /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				2E5797362C27696A004B737F /* Berkeley_AI_HackathonApp.swift */,
 				2E5797382C27696A004B737F /* ContentView.swift */,
+				2EBB07432C3F77200063FE15 /* Misc. */,
 			);
 			path = Root;
-			sourceTree = "<group>";
-		};
-		2E5797582C279792004B737F /* Learning Mode */ = {
-			isa = PBXGroup;
-			children = (
-				2E57975B2C27987F004B737F /* DefaultEnvironment.swift */,
-			);
-			path = "Learning Mode";
 			sourceTree = "<group>";
 		};
 		2E5797692C27DA3D004B737F /* Models */ = {
@@ -220,21 +175,57 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		2E5797722C27E7FB004B737F /* Major */ = {
-			isa = PBXGroup;
-			children = (
-				2E5797732C27E831004B737F /* LearningPlatforms.swift */,
-				2E5797752C27E83D004B737F /* Communities.swift */,
-			);
-			path = Major;
-			sourceTree = "<group>";
-		};
 		2EBB07322C3F5BE20063FE15 /* Berkeley_AI_HackathonTests */ = {
 			isa = PBXGroup;
 			children = (
 				2EBB07332C3F5BE20063FE15 /* Berkeley_AI_HackathonTests.swift */,
 			);
 			path = Berkeley_AI_HackathonTests;
+			sourceTree = "<group>";
+		};
+		2EBB073F2C3F756F0063FE15 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2E5797502C27939E004B737F /* Home.swift */,
+				2E57976E2C27DD08004B737F /* ProblemSeshChat.swift */,
+				2EBB074D2C3F7AD60063FE15 /* LearningPlatforms */,
+				2EBB07442C3F7A0D0063FE15 /* DefaultEnvironment */,
+				2E5797462C279253004B737F /* Settings */,
+				2E5797472C27926D004B737F /* Growth Space */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2EBB07432C3F77200063FE15 /* Misc. */ = {
+			isa = PBXGroup;
+			children = (
+				2EBB073C2C3F5DB60063FE15 /* FunctionsTesting.swift */,
+			);
+			path = Misc.;
+			sourceTree = "<group>";
+		};
+		2EBB07442C3F7A0D0063FE15 /* DefaultEnvironment */ = {
+			isa = PBXGroup;
+			children = (
+				2E57975B2C27987F004B737F /* DefaultEnvironment.swift */,
+				2EBB07452C3F7A440063FE15 /* DefaultEnvironmentModel.swift */,
+			);
+			path = DefaultEnvironment;
+			sourceTree = "<group>";
+		};
+		2EBB074D2C3F7AD60063FE15 /* LearningPlatforms */ = {
+			isa = PBXGroup;
+			children = (
+				2E5797732C27E831004B737F /* LearningPlatforms.swift */,
+			);
+			path = LearningPlatforms;
+			sourceTree = "<group>";
+		};
+		2EBB074F2C3F7C610063FE15 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		70BB63720C17D5AB5C58C7E8 /* Pods */ = {
@@ -401,10 +392,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E57974B2C2792CC004B737F /* TopLearningPlatforms.swift in Sources */,
 				2E57976D2C27DB8B004B737F /* Configurations.swift in Sources */,
 				2E5797392C27696A004B737F /* ContentView.swift in Sources */,
-				2E57975A2C2797B1004B737F /* AuthViewModel.swift in Sources */,
 				2E5797372C27696A004B737F /* Berkeley_AI_HackathonApp.swift in Sources */,
 				2E5797512C27939E004B737F /* Home.swift in Sources */,
 				2E5797712C27E0AA004B737F /* ConfigurationsView.swift in Sources */,
@@ -414,9 +403,8 @@
 				2E57975E2C27B06A004B737F /* Settings.swift in Sources */,
 				2E57976F2C27DD08004B737F /* ProblemSeshChat.swift in Sources */,
 				2E5797602C27B15A004B737F /* GrowthSpace.swift in Sources */,
-				2EDD2A932C2880360005AB20 /* gptNetworking.swift in Sources */,
-				2E57974D2C2792FA004B737F /* TopCommunities.swift in Sources */,
-				2E5797762C27E83D004B737F /* Communities.swift in Sources */,
+				2EBB07462C3F7A440063FE15 /* DefaultEnvironmentModel.swift in Sources */,
+				2EBB07482C3F7A770063FE15 /* GrowthSpaceModel.swift in Sources */,
 				2EBB073D2C3F5DB60063FE15 /* FunctionsTesting.swift in Sources */,
 				2E57975C2C27987F004B737F /* DefaultEnvironment.swift in Sources */,
 			);
