@@ -10,8 +10,6 @@ import SwiftUI
 struct LearningPlatforms: View {
     let pickedPlatform: String
     
-    
-    
     var body: some View{
         VStack{
             if pickedPlatform == "Coursera"{

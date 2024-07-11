@@ -25,9 +25,21 @@
 		2E5797742C27E831004B737F /* LearningPlatforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5797732C27E831004B737F /* LearningPlatforms.swift */; };
 		2E5797762C27E83D004B737F /* Communities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5797752C27E83D004B737F /* Communities.swift */; };
 		2E5797782C27EF6F004B737F /* WhatisXResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5797772C27EF6F004B737F /* WhatisXResponse.swift */; };
+		2EBB07342C3F5BE20063FE15 /* Berkeley_AI_HackathonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBB07332C3F5BE20063FE15 /* Berkeley_AI_HackathonTests.swift */; };
+		2EBB073D2C3F5DB60063FE15 /* FunctionsTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBB073C2C3F5DB60063FE15 /* FunctionsTesting.swift */; };
 		2EDD2A932C2880360005AB20 /* gptNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDD2A922C2880360005AB20 /* gptNetworking.swift */; };
 		DDA2A647105853654DBC646B /* Pods_Berkeley_AI_Hackathon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E59852CADBFE1ED1BDB1CCB /* Pods_Berkeley_AI_Hackathon.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2EBB07352C3F5BE20063FE15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2E57972B2C27696A004B737F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E5797322C27696A004B737F;
+			remoteInfo = Berkeley_AI_Hackathon;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		2E57977A2C2835B0004B737F /* Embed Frameworks */ = {
@@ -63,6 +75,9 @@
 		2E5797732C27E831004B737F /* LearningPlatforms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningPlatforms.swift; sourceTree = "<group>"; };
 		2E5797752C27E83D004B737F /* Communities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Communities.swift; sourceTree = "<group>"; };
 		2E5797772C27EF6F004B737F /* WhatisXResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatisXResponse.swift; sourceTree = "<group>"; };
+		2EBB07312C3F5BE20063FE15 /* Berkeley_AI_HackathonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Berkeley_AI_HackathonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EBB07332C3F5BE20063FE15 /* Berkeley_AI_HackathonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Berkeley_AI_HackathonTests.swift; sourceTree = "<group>"; };
+		2EBB073C2C3F5DB60063FE15 /* FunctionsTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionsTesting.swift; sourceTree = "<group>"; };
 		2EDD2A922C2880360005AB20 /* gptNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gptNetworking.swift; sourceTree = "<group>"; };
 		73410D8637E7D4AC4082134E /* Pods-Berkeley_AI_Hackathon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Berkeley_AI_Hackathon.release.xcconfig"; path = "Target Support Files/Pods-Berkeley_AI_Hackathon/Pods-Berkeley_AI_Hackathon.release.xcconfig"; sourceTree = "<group>"; };
 		9E59852CADBFE1ED1BDB1CCB /* Pods_Berkeley_AI_Hackathon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Berkeley_AI_Hackathon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +92,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2EBB072E2C3F5BE20063FE15 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -84,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				2E5797352C27696A004B737F /* Berkeley_AI_Hackathon */,
+				2EBB07322C3F5BE20063FE15 /* Berkeley_AI_HackathonTests */,
 				2E5797342C27696A004B737F /* Products */,
 				70BB63720C17D5AB5C58C7E8 /* Pods */,
 				A27F723A5FE60D22A9CA6BBD /* Frameworks */,
@@ -94,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				2E5797332C27696A004B737F /* Berkeley_AI_Hackathon.app */,
+				2EBB07312C3F5BE20063FE15 /* Berkeley_AI_HackathonTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				2E5797362C27696A004B737F /* Berkeley_AI_HackathonApp.swift */,
+				2EBB073C2C3F5DB60063FE15 /* FunctionsTesting.swift */,
 				2E5797472C27926D004B737F /* Growth Space */,
 				2E5797582C279792004B737F /* Learning Mode */,
 				2E5797522C2795D8004B737F /* Model */,
@@ -204,6 +229,14 @@
 			path = Major;
 			sourceTree = "<group>";
 		};
+		2EBB07322C3F5BE20063FE15 /* Berkeley_AI_HackathonTests */ = {
+			isa = PBXGroup;
+			children = (
+				2EBB07332C3F5BE20063FE15 /* Berkeley_AI_HackathonTests.swift */,
+			);
+			path = Berkeley_AI_HackathonTests;
+			sourceTree = "<group>";
+		};
 		70BB63720C17D5AB5C58C7E8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +277,24 @@
 			productReference = 2E5797332C27696A004B737F /* Berkeley_AI_Hackathon.app */;
 			productType = "com.apple.product-type.application";
 		};
+		2EBB07302C3F5BE20063FE15 /* Berkeley_AI_HackathonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EBB07392C3F5BE20063FE15 /* Build configuration list for PBXNativeTarget "Berkeley_AI_HackathonTests" */;
+			buildPhases = (
+				2EBB072D2C3F5BE20063FE15 /* Sources */,
+				2EBB072E2C3F5BE20063FE15 /* Frameworks */,
+				2EBB072F2C3F5BE20063FE15 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2EBB07362C3F5BE20063FE15 /* PBXTargetDependency */,
+			);
+			name = Berkeley_AI_HackathonTests;
+			productName = Berkeley_AI_HackathonTests;
+			productReference = 2EBB07312C3F5BE20063FE15 /* Berkeley_AI_HackathonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -256,6 +307,10 @@
 				TargetAttributes = {
 					2E5797322C27696A004B737F = {
 						CreatedOnToolsVersion = 15.0;
+					};
+					2EBB07302C3F5BE20063FE15 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 2E5797322C27696A004B737F;
 					};
 				};
 			};
@@ -275,6 +330,7 @@
 			projectRoot = "";
 			targets = (
 				2E5797322C27696A004B737F /* Berkeley_AI_Hackathon */,
+				2EBB07302C3F5BE20063FE15 /* Berkeley_AI_HackathonTests */,
 			);
 		};
 /* End PBXProject section */
@@ -286,6 +342,13 @@
 			files = (
 				2E57973E2C27696B004B737F /* Preview Assets.xcassets in Resources */,
 				2E57973B2C27696B004B737F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EBB072F2C3F5BE20063FE15 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,11 +417,28 @@
 				2EDD2A932C2880360005AB20 /* gptNetworking.swift in Sources */,
 				2E57974D2C2792FA004B737F /* TopCommunities.swift in Sources */,
 				2E5797762C27E83D004B737F /* Communities.swift in Sources */,
+				2EBB073D2C3F5DB60063FE15 /* FunctionsTesting.swift in Sources */,
 				2E57975C2C27987F004B737F /* DefaultEnvironment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2EBB072D2C3F5BE20063FE15 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EBB07342C3F5BE20063FE15 /* Berkeley_AI_HackathonTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2EBB07362C3F5BE20063FE15 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2E5797322C27696A004B737F /* Berkeley_AI_Hackathon */;
+			targetProxy = 2EBB07352C3F5BE20063FE15 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		2E57973F2C27696B004B737F /* Debug */ = {
@@ -542,6 +622,44 @@
 			};
 			name = Release;
 		};
+		2EBB07372C3F5BE20063FE15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZBGGP4D9H5;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.goodthings.Berkeley-AI-HackathonTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Berkeley_AI_Hackathon.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Berkeley_AI_Hackathon";
+			};
+			name = Debug;
+		};
+		2EBB07382C3F5BE20063FE15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZBGGP4D9H5;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.goodthings.Berkeley-AI-HackathonTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Berkeley_AI_Hackathon.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Berkeley_AI_Hackathon";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -559,6 +677,15 @@
 			buildConfigurations = (
 				2E5797422C27696B004B737F /* Debug */,
 				2E5797432C27696B004B737F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2EBB07392C3F5BE20063FE15 /* Build configuration list for PBXNativeTarget "Berkeley_AI_HackathonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EBB07372C3F5BE20063FE15 /* Debug */,
+				2EBB07382C3F5BE20063FE15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

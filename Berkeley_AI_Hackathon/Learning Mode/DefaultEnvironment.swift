@@ -23,37 +23,17 @@ struct DefaultEnvironment: View {
     
     var body: some View {
         NavigationStack{
-           /* ZStack{
-                Rectangle()
-                    .foregroundStyle(
-                        LinearGradient(colors: [Color.white,Color("blueG"),Color.white], startPoint: .topLeading, endPoint: .bottomTrailing))
-                    .frame(width: 400,height: 900)
-                */
                 VStack{
-                    
                     Settings()
                         .padding(.top,64)
                     Spacer()
                     
-                    HStack{
-                        RoundedRectangle(cornerRadius: 10)
-                            .frame(width: 48, height: 148)
-                        
-                        RoundedRectangle(cornerRadius: 10)
-                            .frame(width: 48, height: 100)
-                            .padding(.top,48)
-                        
-                        RoundedRectangle(cornerRadius: 10)
-                            .frame(width: 48, height: 100)
-                            .padding(.top,48)
-                        
-                        RoundedRectangle(cornerRadius: 10)
-                            .frame(width: 48, height: 148)
-                        
-                    }.padding(.bottom,36)
+                    //content
+                    voiceBar
+                    
                     
                     if started != true{
-                        ZStack{
+                        ZStack {
                             RoundedRectangle(cornerRadius: 10.0)
                                 .frame(width: 360,height: 100)
                                 .foregroundColor(.white)
@@ -108,35 +88,40 @@ struct DefaultEnvironment: View {
 
                     Text("Press to Speak")
                         .foregroundStyle(.gray)
-                    
                     //send voice,
-                    
                     
                     Spacer()
                 }
             }.navigationBarBackButtonHidden(true)
         }
-    }
-
     
-  
- /*
-func startChat() {
-    let url = "http://localhost:8000/api/start_chat"
-    AF.request(url, method: .post, encoding: JSONEncoding.default)
-        .responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                print("Response JSON: \(value)")
-                //self.responseMessage = "Success: \(value)"
-            case .failure(let error):
-                print("Error: \(error)")
-                //self.responseMessage = "Error: \(error.localizedDescription)"
-            }
-        }
-}*/
-
-        
+    // functions
+    func recording(recordingPermission: Bool){
+       
+    }
+    
+    //view variables
+    var voiceBar: some View{
+        HStack{
+            largeBar
+            smallBar
+            smallBar
+            largeBar
+            
+        }.padding(.bottom,36)
+    }
+    
+    var smallBar: some View{
+        RoundedRectangle(cornerRadius: 10)
+            .frame(width: 48, height: 100)
+            .padding(.top,48)
+    }
+    
+    var largeBar: some View{
+        RoundedRectangle(cornerRadius: 10)
+            .frame(width: 48, height: 148)
+    }
+    }
     
     func requestMicrophoneAccess(completion: @escaping (Bool) -> Void) {
         AVAudioSession.sharedInstance().requestRecordPermission { granted in
@@ -145,7 +130,6 @@ func startChat() {
             }
         }
     }
-
 
     func endChat() {
         let url = "http://localhost:8000/api/end_chat"
@@ -160,7 +144,7 @@ func startChat() {
                     //self.responseMessage = "Error: \(error.localizedDescription)"
                 }
            }
-    }
+     }
 
 
 #Preview {
