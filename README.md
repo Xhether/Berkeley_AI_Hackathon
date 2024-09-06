@@ -1,4 +1,4 @@
-This is Ambrose AI! 
+## This is Ambrose AI! 
 
 Named after an amazing TA for an intermediate Computer Science Course at Cornell, Amrbrose AI's main purpose is to serve as a teaching assistant in your pocket, allowing 
 students to ask difficult questions to Ambrose and recieve real-time responses in their preference of voice or text-communication. 
