@@ -39,6 +39,13 @@ struct PerplexityView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                 
+                if viewModel.isLoading {
+                    ProgressView()
+                } else {
+                    Text(viewModel.response)
+                        .padding()
+                }
+                
                 Button("Send Query") {
                     viewModel.sendQuery(query)
                 }
@@ -55,12 +62,7 @@ struct PerplexityView: View {
                 .toggleStyle(.button)
           
             
-            if viewModel.isLoading {
-                ProgressView()
-            } else {
-                Text(viewModel.response)
-                    .padding()
-            }
+         
             
         }
     

@@ -118,7 +118,7 @@ struct GrowthSpace: View {
                     }
                     
                     NavigationLink {
-                        ProblemSeshChat()
+                        PerplexityView(apiKey: "")
                     } label: {
                         ZStack{
                             RoundedRectangle(cornerRadius: 10)

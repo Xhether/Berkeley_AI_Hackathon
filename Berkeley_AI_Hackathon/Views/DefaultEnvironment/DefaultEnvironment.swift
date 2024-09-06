@@ -191,7 +191,7 @@ struct DefaultEnvironment: View {
             audioPlayer?.pause()
             isPlaying = false
         } else {
-            textToSpeech(text: inputText, voiceId: "21m00Tcm4TlvDq8ikWAM", apiKey: "sk_05054e7631acf83995f47a4802f79c95a829186eff15d22c") { audioURL in
+            textToSpeech(text: inputText, voiceId: "21m00Tcm4TlvDq8ikWAM", apiKey: "") { audioURL in
                 DispatchQueue.main.async {
                     if let audioURL = audioURL {
                         self.audioPlayer = AVPlayer(url: audioURL)

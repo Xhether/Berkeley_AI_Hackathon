@@ -53,7 +53,7 @@ class AudioRecorder: NSObject, AVAudioRecorderDelegate {
     
     
     func transcribeAudio(fileURL: URL) {
-        let apiKey = "sk-proj-J1oMApDLB6TteVcmTQkWT3BlbkFJgrzqYyRpdmzZv7Yu7PpA"
+        let apiKey = ""
         let endpoint = "https://api.openai.com/v1/audio/transcriptions"
         
         var request = URLRequest(url: URL(string: endpoint)!)
