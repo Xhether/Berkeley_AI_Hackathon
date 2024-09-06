@@ -21,22 +21,22 @@ struct Settings: View{
                         .foregroundColor(.black)
                 })
                 Spacer()
-                
-                Circle()
-                    .frame(width:30,height: 30)
-                    .padding(.trailing)
+               
             }
         }
         if showMenu == true{
             ZStack{
                 RoundedRectangle(cornerRadius: 10)
-                    .frame(width: 200,height: 64)
+                    .stroke(Color.black,lineWidth:2)
+                    .frame(width: 200,height: 100)
                     .padding(.trailing,120)
-                    .foregroundColor(.gray)
+                    .foregroundColor(.white)
+                    
+                
                 
                 VStack{
                     NavigationLink{
-                        Settings()
+                        ConfigurationsView()
                     } label: {
                         Text("Settings")
                             .foregroundStyle(.black)
@@ -48,6 +48,16 @@ struct Settings: View{
                         GrowthSpace(configs: Configurations(id: UUID(), favSubject: "Computer Science", courses: [], topics: [], level: "Medium"))
                     } label: {
                         Text("Growth Space")
+                            .foregroundStyle(.black)
+                        
+                    }
+                    Divider()
+                        .frame(width: 200)
+                    
+                    NavigationLink{
+                        Home()
+                    } label: {
+                        Text("Home")
                             .foregroundStyle(.black)
                     }
                 }.padding(.trailing,116)

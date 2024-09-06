@@ -16,10 +16,7 @@ struct LearningPlatforms: View {
                 ZStack{
                     RoundedRectangle(cornerRadius: 10)
                         .frame(width: 340,height: 32)
-                        
-                    
                     Text("What is Coursera")
-                    
                 }
                 //get response to what is coursera
                 

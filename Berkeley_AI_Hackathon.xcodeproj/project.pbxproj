@@ -21,6 +21,13 @@
 		2E5797712C27E0AA004B737F /* ConfigurationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5797702C27E0AA004B737F /* ConfigurationsView.swift */; };
 		2E5797742C27E831004B737F /* LearningPlatforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5797732C27E831004B737F /* LearningPlatforms.swift */; };
 		2E5797782C27EF6F004B737F /* WhatisXResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5797772C27EF6F004B737F /* WhatisXResponse.swift */; };
+		2EB9CB1D2C87DEBF00C6FC56 /* PerplexityAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB9CB1C2C87DEBF00C6FC56 /* PerplexityAPIClient.swift */; };
+		2EB9CB1F2C87E1FE00C6FC56 /* PerplexityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB9CB1E2C87E1FE00C6FC56 /* PerplexityViewModel.swift */; };
+		2EB9CB212C87E23300C6FC56 /* PerplexityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB9CB202C87E23300C6FC56 /* PerplexityView.swift */; };
+		2EB9CB232C881C6000C6FC56 /* ConfigurationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB9CB222C881C6000C6FC56 /* ConfigurationsViewModel.swift */; };
+		2EB9CB252C88817600C6FC56 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB9CB242C88817600C6FC56 /* DataStore.swift */; };
+		2EB9CB282C88A4E500C6FC56 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB9CB272C88A4E500C6FC56 /* SpeechRecognizer.swift */; };
+		2EB9CB2C2C894A4800C6FC56 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB9CB2B2C894A4800C6FC56 /* AudioRecorder.swift */; };
 		2EBB07342C3F5BE20063FE15 /* Berkeley_AI_HackathonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBB07332C3F5BE20063FE15 /* Berkeley_AI_HackathonTests.swift */; };
 		2EBB073D2C3F5DB60063FE15 /* FunctionsTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBB073C2C3F5DB60063FE15 /* FunctionsTesting.swift */; };
 		2EBB07462C3F7A440063FE15 /* DefaultEnvironmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBB07452C3F7A440063FE15 /* DefaultEnvironmentModel.swift */; };
@@ -68,6 +75,13 @@
 		2E5797702C27E0AA004B737F /* ConfigurationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationsView.swift; sourceTree = "<group>"; };
 		2E5797732C27E831004B737F /* LearningPlatforms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningPlatforms.swift; sourceTree = "<group>"; };
 		2E5797772C27EF6F004B737F /* WhatisXResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatisXResponse.swift; sourceTree = "<group>"; };
+		2EB9CB1C2C87DEBF00C6FC56 /* PerplexityAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerplexityAPIClient.swift; sourceTree = "<group>"; };
+		2EB9CB1E2C87E1FE00C6FC56 /* PerplexityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerplexityViewModel.swift; sourceTree = "<group>"; };
+		2EB9CB202C87E23300C6FC56 /* PerplexityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerplexityView.swift; sourceTree = "<group>"; };
+		2EB9CB222C881C6000C6FC56 /* ConfigurationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationsViewModel.swift; sourceTree = "<group>"; };
+		2EB9CB242C88817600C6FC56 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		2EB9CB272C88A4E500C6FC56 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
+		2EB9CB2B2C894A4800C6FC56 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		2EBB07312C3F5BE20063FE15 /* Berkeley_AI_HackathonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Berkeley_AI_HackathonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EBB07332C3F5BE20063FE15 /* Berkeley_AI_HackathonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Berkeley_AI_HackathonTests.swift; sourceTree = "<group>"; };
 		2EBB073C2C3F5DB60063FE15 /* FunctionsTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionsTesting.swift; sourceTree = "<group>"; };
@@ -142,6 +156,7 @@
 			children = (
 				2E57975D2C27B06A004B737F /* Settings.swift */,
 				2E5797702C27E0AA004B737F /* ConfigurationsView.swift */,
+				2EB9CB222C881C6000C6FC56 /* ConfigurationsViewModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -160,6 +175,7 @@
 			children = (
 				2E5797362C27696A004B737F /* Berkeley_AI_HackathonApp.swift */,
 				2E5797382C27696A004B737F /* ContentView.swift */,
+				2EB9CB242C88817600C6FC56 /* DataStore.swift */,
 				2EBB07432C3F77200063FE15 /* Misc. */,
 			);
 			path = Root;
@@ -173,6 +189,14 @@
 				2E57976C2C27DB8B004B737F /* Configurations.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		2EB9CB262C88A4D800C6FC56 /* Speech */ = {
+			isa = PBXGroup;
+			children = (
+				2EB9CB272C88A4E500C6FC56 /* SpeechRecognizer.swift */,
+			);
+			path = Speech;
 			sourceTree = "<group>";
 		};
 		2EBB07322C3F5BE20063FE15 /* Berkeley_AI_HackathonTests */ = {
@@ -207,6 +231,7 @@
 		2EBB07442C3F7A0D0063FE15 /* DefaultEnvironment */ = {
 			isa = PBXGroup;
 			children = (
+				2EB9CB262C88A4D800C6FC56 /* Speech */,
 				2E57975B2C27987F004B737F /* DefaultEnvironment.swift */,
 				2EBB07452C3F7A440063FE15 /* DefaultEnvironmentModel.swift */,
 			);
@@ -224,6 +249,10 @@
 		2EBB074F2C3F7C610063FE15 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				2EB9CB1C2C87DEBF00C6FC56 /* PerplexityAPIClient.swift */,
+				2EB9CB1E2C87E1FE00C6FC56 /* PerplexityViewModel.swift */,
+				2EB9CB202C87E23300C6FC56 /* PerplexityView.swift */,
+				2EB9CB2B2C894A4800C6FC56 /* AudioRecorder.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -392,19 +421,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EB9CB1F2C87E1FE00C6FC56 /* PerplexityViewModel.swift in Sources */,
 				2E57976D2C27DB8B004B737F /* Configurations.swift in Sources */,
 				2E5797392C27696A004B737F /* ContentView.swift in Sources */,
 				2E5797372C27696A004B737F /* Berkeley_AI_HackathonApp.swift in Sources */,
+				2EB9CB1D2C87DEBF00C6FC56 /* PerplexityAPIClient.swift in Sources */,
 				2E5797512C27939E004B737F /* Home.swift in Sources */,
 				2E5797712C27E0AA004B737F /* ConfigurationsView.swift in Sources */,
 				2E5797782C27EF6F004B737F /* WhatisXResponse.swift in Sources */,
+				2EB9CB212C87E23300C6FC56 /* PerplexityView.swift in Sources */,
 				2E57976B2C27DA58004B737F /* Message.swift in Sources */,
 				2E5797742C27E831004B737F /* LearningPlatforms.swift in Sources */,
 				2E57975E2C27B06A004B737F /* Settings.swift in Sources */,
 				2E57976F2C27DD08004B737F /* ProblemSeshChat.swift in Sources */,
+				2EB9CB252C88817600C6FC56 /* DataStore.swift in Sources */,
+				2EB9CB282C88A4E500C6FC56 /* SpeechRecognizer.swift in Sources */,
 				2E5797602C27B15A004B737F /* GrowthSpace.swift in Sources */,
+				2EB9CB2C2C894A4800C6FC56 /* AudioRecorder.swift in Sources */,
 				2EBB07462C3F7A440063FE15 /* DefaultEnvironmentModel.swift in Sources */,
 				2EBB07482C3F7A770063FE15 /* GrowthSpaceModel.swift in Sources */,
+				2EB9CB232C881C6000C6FC56 /* ConfigurationsViewModel.swift in Sources */,
 				2EBB073D2C3F5DB60063FE15 /* FunctionsTesting.swift in Sources */,
 				2E57975C2C27987F004B737F /* DefaultEnvironment.swift in Sources */,
 			);

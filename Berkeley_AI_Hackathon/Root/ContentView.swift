@@ -16,6 +16,7 @@ struct ContentView: View {
             
         }
         .padding()
+     //   PerplexityView(apiKey: "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")
     }
 }
     

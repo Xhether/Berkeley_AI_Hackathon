@@ -9,5 +9,4 @@ target 'Berkeley_AI_Hackathon' do
 
 pod 'Alamofire', '~> 5.8.1'
 
-
 end

@@ -17,15 +17,18 @@ extension String: Identifiable {
 
 struct GrowthSpace: View {
     let configs: Configurations
+    @StateObject private var dataStore = DataStore.shared
     let learningPlatforms = ["Coursera","Codeacademy","Brilliant", "MIT CourseWare", "Code.org", "Khan Academy", "W3Schools"]
     let communities = ["Kaggle", "Girls Who Code", "Colorstack", "Reddit"]
+    let courses = ["Data Structures and Functional Programming", "Engineering Probability and Statistics"]
     
     var body: some View {
         ScrollView(.vertical){
             NavigationStack{
                 VStack{
                     Settings()
-                    
+                        .padding(.leading,40)
+                        .padding(.trailing,40)
                     
                     VStack{
                         Text("Field of Study or Favorite Subject")
@@ -51,7 +54,8 @@ struct GrowthSpace: View {
                                         //fix border uglahhh
                                             .overlay( /// apply a rounded border
                                                 RoundedRectangle(cornerRadius: 10)
-                                                    .stroke(.black, lineWidth: 2)
+                                                    .stroke(.black, lineWidth: 3)
+                                                    
                                                 
                                             )
                                         Text(platform)
@@ -60,8 +64,8 @@ struct GrowthSpace: View {
                                 }
                             }
                         }
-                        .padding(.leading)
-                        .padding(.trailing)
+                        .padding(.leading,60)
+                        .padding(.trailing,60)
                     }
                     Text("Most Prominent Communities")
                         .padding(.top)
@@ -85,8 +89,8 @@ struct GrowthSpace: View {
                                 }
                             }
                         }
-                        .padding(.leading)
-                        .padding(.trailing)
+                        .padding(.leading,60)
+                        .padding(.trailing,60)
                     }
                     VStack{
                         Text("Problem Session")
@@ -101,13 +105,13 @@ struct GrowthSpace: View {
                     
                     VStack(alignment: .leading){
                         Text("Courses:")
-                        Text(" - Discrete Mathematics")
-                        Text(" - Object Oriented Programming ")
+                        //for each course...
+                        ForEach(dataStore.items) { item in
+                            Text(item)
+                        }
+                        
                         Text("Topics:")
-                        Text(" - Trees")
-                        Text(" - Graphs")
-                        Text(" - Heaps")
-                        Text(" - Logic")
+                        //for each topic...
                         Text("Levels:")
                         Text("Medium (Recommended)")
 
@@ -133,5 +137,5 @@ struct GrowthSpace: View {
 
 
 #Preview {
-    GrowthSpace(configs: Configurations(id: UUID(), favSubject: "Computer Science", courses: [""], topics: [""], level: "Medium"))
+    GrowthSpace(configs: Configurations(id: UUID(), favSubject: "Computer Science", courses: [], topics: [], level: "Medium"))
 }

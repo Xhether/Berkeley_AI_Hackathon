@@ -8,7 +8,8 @@
 import SwiftUI
 
 //text
-struct Message: Codable, Identifiable {
-    let id: UUID
-    let text: String
-}
+
+//struct Message: Codable, Identifiable {
+//    let id: UUID
+//    let text: String
+//}

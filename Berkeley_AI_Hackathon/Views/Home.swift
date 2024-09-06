@@ -9,7 +9,6 @@ import SwiftUI
 
 struct Home: View {
     var body: some View {
-    
             NavigationStack{
                 VStack {
                     Spacer()
@@ -29,7 +28,6 @@ struct Home: View {
                                 .foregroundStyle(.white)
                         }
                     }
-                    
                     Spacer()
                 }
                 .padding()
