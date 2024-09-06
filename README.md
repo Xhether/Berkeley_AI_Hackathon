@@ -40,10 +40,16 @@ I strived to utilize functions in repeatable portions of code, and conform to MV
 Many of the other features are pretty straightforward, but I'm pretty excited that the data for adding courses and configurations (shown in demo) persists throughout the lifetime of the app, 
 and I love the clickable scroll views in the growth space page. 
 
-## Final Thoughts 💭
+## Final Thoughts + Progress + Demo💭
 
 Honestly, this project was extremely difficult and it's no wonder that we struggled so much during our hackathon. Nonetheless, this project taught me a lot about how to utilize all of the cool open source
 technology (AI or not) that can be used in my projects, and I also got exposed to AVFoundation for the first time, a Swift framework for using audio and working with voice input in your projects. Beyond this, 
 I was also able to explore other features (many didn't make it) that Swift has such as animations, and I'm so excited about where I'll go next.
 
 I plan to continue working on and understanding this project with my teammates when I get some time off, and I'm pretty proud of our persistance.
+
+ALSO! 
+
+Peep the updates, this is the original devpost from the hackathon (includes a demo)
+https://devpost.com/software/ambrose-ai?ref_content=user-portfolio&ref_feature=in_progress
+
