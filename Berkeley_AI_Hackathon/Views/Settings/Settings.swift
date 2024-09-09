@@ -31,9 +31,6 @@ struct Settings: View{
                     .frame(width: 200,height: 100)
                     .padding(.trailing,120)
                     .foregroundColor(.white)
-                    
-                
-                
                 VStack{
                     NavigationLink{
                         ConfigurationsView()
@@ -43,17 +40,14 @@ struct Settings: View{
                     }
                     Divider()
                         .frame(width: 200)
-                        
                     NavigationLink{
                         GrowthSpace(configs: Configurations(id: UUID(), favSubject: "Computer Science", courses: [], topics: [], level: "Medium"))
                     } label: {
                         Text("Growth Space")
                             .foregroundStyle(.black)
-                        
                     }
                     Divider()
                         .frame(width: 200)
-                    
                     NavigationLink{
                         Home()
                     } label: {

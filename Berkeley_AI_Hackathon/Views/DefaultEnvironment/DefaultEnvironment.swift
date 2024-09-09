@@ -6,29 +6,17 @@
 //
 
 import SwiftUI
-import Alamofire
 import AVFAudio
 import AVFoundation
-
-
-
 
 struct DefaultEnvironment: View {
     @State private var defaultPrompts = ["Ask Me About Newton's Second Law!", "Ask Me About Mathematical Induction!", "Ask Me About Graph Theory!"]
     @State private var started = false
     @State private var showMenu = false
     @State var responseMessage: String = "No response yet"
-    
-    @StateObject private var viewModel = DefaultEnvironmentModel()
-
-    
     @State private var inputText: String = ""
     @State private var isPlaying: Bool = false
     @State private var audioPlayer: AVPlayer?
-    
-    // responses variable
-    // sent variable
-    
     @State private var currentIndex = 0
     private let timer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
     @State private var userPrompt = ""
@@ -43,30 +31,6 @@ struct DefaultEnvironment: View {
                 //content
                 voiceBar
                 
-                VStack {
-                           Button(action: {
-                               if viewModel.isRecording {
-                                   viewModel.stopRecording()
-                               } else {
-                                   viewModel.startRecording()
-                               }
-                           }) {
-                               Text(viewModel.isRecording ? "Stop Recording" : "Start Recording")
-                           }
-                           .padding()
-                           
-                    if !viewModel.transcription.isEmpty {
-                               Text("Transcription:")
-                                   .font(.headline)
-                                   .padding(.top)
-                               
-                               ScrollView {
-                                   Text(viewModel.transcription)
-                                       .padding()
-                               }
-                           }
-                   }
-            
                 //get voice to text data on one side, and put it into bubble
                 
                 //get text response from AI and put it on the other side
@@ -82,61 +46,14 @@ struct DefaultEnvironment: View {
                 .padding()
             }
             
+            
             Spacer()
             
-            //                    if started != true{
-            //                        rotatingText
-            //                        if canRecord == false{
-            //                            Button{
-            //                                requestMicrophoneAccess { granted in
-            //                                    canRecord = granted
-            //                                }
-            //                            } label: {
-            //                                ZStack{
-            //                                    Circle()
-            //                                        .frame(width: 64,height: 64)
-            //                                    Circle()
-            //                                        .frame(width: 44,height: 44)
-            //                                        .foregroundColor(.black)
-            //
-            //                                }
-            //                                .padding(.top)
-            //                            }.padding(.top)
-            //                        } else {
-            //
-            //                            Button{
-            //                                //   if we don't hear audio above ..., we fire the message
-            //                                //   networkManager.startChat()
-            //                            } label: {
-            //
-            //                                micIcon
-            //                            }.padding(.top)
-            //                        }
-            //                    }
             
-            //                    Text("Press to Speak")
-            //                        .foregroundStyle(.gray)
-            //                    //send voice,
-            //
-            //                    Spacer()
-            
-            //                    textToSpeech(text: "Hello, world!", voiceId: "21m00Tcm4TlvDq8ikWAM", apiKey: "YOUR_API_KEY") { audioURL in
-            //                        if let audioURL = audioURL {
-            //                            playAudio(from: audioURL)
-            //                        }
-            //                    }
-            
+            // functions
             
         }
-    }/*.navigationBarBackButtonHidden(true)*/
-    
-    
-    
-    // functions
-    func recording(recordingPermission: Bool){
-        
     }
-    
     //view variables
     var micIcon: some View{
         ZStack{
@@ -148,21 +65,6 @@ struct DefaultEnvironment: View {
                 .font(.system(size: 44))
         }
     }
-    
-    //    var rotatingText: some View{
-    //                Text(defaultPrompts[currentIndex])
-    //                .font(.title)
-    //                .frame(width: 320, height: 100)
-    //                .transition(.opacity)
-    //                .overlay( /// apply a rounded border
-    //                    RoundedRectangle(cornerRadius: 10)
-    //                        .stroke(.black, lineWidth: 2)
-    //                    )
-    //                .onReceive(timer) { _ in
-    //                    // Update the current index, wrapping around to the start if necessary
-    //                    currentIndex = (currentIndex + 1) % defaultPrompts.count
-    //        }
-    //    }
     
     var voiceBar: some View{
         HStack{
@@ -185,7 +87,6 @@ struct DefaultEnvironment: View {
     }
     
     
-    
     func generateAndPlaySpeech() {
         if isPlaying {
             audioPlayer?.pause()
@@ -202,7 +103,6 @@ struct DefaultEnvironment: View {
             }
         }
     }
-    
     
     func textToSpeech(text: String, voiceId: String, apiKey: String, completion: @escaping (URL?) -> Void) {
         let url = URL(string: "https://api.elevenlabs.io/v1/text-to-speech/\(voiceId)/stream")!
@@ -241,10 +141,14 @@ struct DefaultEnvironment: View {
                 completion(nil)
             }
         }
-        
         task.resume()
     }
+    
 }
-#Preview {
-    DefaultEnvironment()
-}
+
+        
+        #Preview {
+            DefaultEnvironment()
+        }
+    
+

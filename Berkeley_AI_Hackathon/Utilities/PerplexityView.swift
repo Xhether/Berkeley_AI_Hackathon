@@ -31,10 +31,6 @@ struct PerplexityView: View {
             
             
             if isStarted == true {
-                //post initial response to given preferences
-                
-//                viewModel.sendQuery("Please Generate me 3 easy questions based on the following courses and learning goals:" + courses + topics )
-                
                 TextField("Enter your Response", text: $query)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()

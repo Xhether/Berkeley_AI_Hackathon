@@ -7,9 +7,8 @@
 
 import SwiftUI
 
-//pfp + settings
+//pfp + settings WIPPP
 struct ConfigurationsView: View {
-    @EnvironmentObject var configViewModel: ConfigurationsViewModel
     @StateObject private var dataStore = DataStore.shared
     @State private var course = ""
     @State private var topic = ""
@@ -40,28 +39,12 @@ struct ConfigurationsView: View {
         Button(action: {dataStore.appendItem(course)}) {
             Text("Press Me")
         }
-        
-//   Button("Publish", action: configViewModel.postCourse(course: course))
-     Text("Please indicate the content you're struggling with")
-            .padding()
-            .multilineTextAlignment(.center)
-            .background(RoundedRectangle(cornerRadius: 20).foregroundColor(.brown))
 
-        TextField("Enter a Course", text: $topic)
-            .multilineTextAlignment(.center)
-            .padding(.top)
-        
-        Button(action: {configViewModel.postCourse(course: course)}) {
-            Text("Press Me")
-        }
-        
-    List(configViewModel.courses, id: \.self) { course in
-                 Text(course)
-            }
+     Text("Please indicate the content you're struggling with")
+
     }
 }
 
 #Preview {
     ConfigurationsView()
-        .environmentObject(ConfigurationsViewModel())
 }

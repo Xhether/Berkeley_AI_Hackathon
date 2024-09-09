@@ -10,11 +10,9 @@ import SwiftUI
 @main
 
 struct Berkeley_AI_HackathonApp: App {
-    @StateObject private var configsViewModel = ConfigurationsViewModel()
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(configsViewModel)
         }
     }
 }

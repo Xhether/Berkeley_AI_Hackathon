@@ -10,6 +10,7 @@ import SwiftUI
 
 extension String: Identifiable {
     public typealias ID = Int
+    
     public var id: Int {
         return hash
     }
@@ -133,6 +134,7 @@ struct GrowthSpace: View {
             }.navigationBarBackButtonHidden(true)
         }
     }
+    
 }
 
 
