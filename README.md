@@ -53,3 +53,6 @@ ALSO!
 Peep the updates, this is the original devpost from the hackathon (includes a demo)
 https://devpost.com/software/ambrose-ai?ref_content=user-portfolio&ref_feature=in_progress
 
+Here's the current state:
+https://youtu.be/XpuuXzIDe-E
+
